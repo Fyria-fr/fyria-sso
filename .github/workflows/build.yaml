@@ -2,8 +2,7 @@ name: Build check
 
 on:
   push:
-    branches-ignore:
-      - main
+    branches:
       - develop
 
 jobs:
