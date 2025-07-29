@@ -315,7 +315,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.27.1"
 
-"@babel/runtime@^7.12.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.17.2", "@babel/runtime@^7.18.3", "@babel/runtime@^7.27.6", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
+"@babel/runtime@^7.12.5", "@babel/runtime@^7.14.6", "@babel/runtime@^7.17.2", "@babel/runtime@^7.18.3", "@babel/runtime@^7.23.2", "@babel/runtime@^7.27.6", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.7":
   version "7.28.2"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.28.2.tgz#2ae5a9d51cc583bd1f5673b3bb70d6d819682473"
   integrity sha512-KHp2IflsnGywDjBWDkR9iEqiWSpc8GIi0lgTT3mOElT0PP1tG26P4tmFI2YvAdzgq9RGyoHZQEIEdZy6Ec5xCA==
@@ -7171,6 +7171,13 @@ html-escaper@^2.0.0:
   resolved "https://registry.yarnpkg.com/html-escaper/-/html-escaper-2.0.2.tgz#dfd60027da36a36dfcbe236262c00a5822681453"
   integrity sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==
 
+html-parse-stringify@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/html-parse-stringify/-/html-parse-stringify-3.0.1.tgz#dfc1017347ce9f77c8141a507f233040c59c55d2"
+  integrity sha512-KknJ50kTInJ7qIScF3jeaFRpMpE8/lfiTdzf/twXyPBLAGrLRTmkz3AdTnKeh40X8k9L2fdYwEp/42WGXIRGcg==
+  dependencies:
+    void-elements "3.1.0"
+
 html-url-attributes@^3.0.0:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/html-url-attributes/-/html-url-attributes-3.0.1.tgz#83b052cd5e437071b756cd74ae70f708870c2d87"
@@ -7227,6 +7234,20 @@ husky@^9.1.7:
   version "9.1.7"
   resolved "https://registry.yarnpkg.com/husky/-/husky-9.1.7.tgz#d46a38035d101b46a70456a850ff4201344c0b2d"
   integrity sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==
+
+i18next-browser-languagedetector@^8.2.0:
+  version "8.2.0"
+  resolved "https://registry.yarnpkg.com/i18next-browser-languagedetector/-/i18next-browser-languagedetector-8.2.0.tgz#c3ca311e249d2f7d8bb9b3b13ac9af380a3b15b0"
+  integrity sha512-P+3zEKLnOF0qmiesW383vsLdtQVyKtCNA9cjSoKCppTKPQVfKd2W8hbVo5ZhNJKDqeM7BOcvNoKJOjpHh4Js9g==
+  dependencies:
+    "@babel/runtime" "^7.23.2"
+
+i18next@^25.3.2:
+  version "25.3.2"
+  resolved "https://registry.yarnpkg.com/i18next/-/i18next-25.3.2.tgz#3d6a7d1dc058caa1b9bdca47fd585483e2e7a637"
+  integrity sha512-JSnbZDxRVbphc5jiptxr3o2zocy5dEqpVm9qCGdJwRNO+9saUJS0/u4LnM/13C23fUEWxAylPqKU/NpMV/IjqA==
+  dependencies:
+    "@babel/runtime" "^7.27.6"
 
 iconv-lite@0.6.3, iconv-lite@^0.6.3:
   version "0.6.3"
@@ -10169,6 +10190,14 @@ react-hook-form@^7.61.1:
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.61.1.tgz#8c1f086ccd921a6e90df6800787e9ca3833f86c1"
   integrity sha512-2vbXUFDYgqEgM2RcXcAT2PwDW/80QARi+PKmHy5q2KhuKvOlG8iIYgf7eIlIANR5trW9fJbP4r5aub3a4egsew==
 
+react-i18next@^15.6.1:
+  version "15.6.1"
+  resolved "https://registry.yarnpkg.com/react-i18next/-/react-i18next-15.6.1.tgz#a2747bed7768faef28fa28de32ff3811b2459c20"
+  integrity sha512-uGrzSsOUUe2sDBG/+FJq2J1MM+Y4368/QW8OLEKSFvnDflHBbZhSd1u3UkW0Z06rMhZmnB/AQrhCpYfE5/5XNg==
+  dependencies:
+    "@babel/runtime" "^7.27.6"
+    html-parse-stringify "^3.0.1"
+
 react-icons@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.5.0.tgz#8aa25d3543ff84231685d3331164c00299cdfaf2"
@@ -12336,6 +12365,11 @@ vite@^6.2.0:
     tinyglobby "^0.2.13"
   optionalDependencies:
     fsevents "~2.3.3"
+
+void-elements@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
+  integrity sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==
 
 walker@^1.0.8:
   version "1.0.8"
