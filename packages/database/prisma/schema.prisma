@@ -8,12 +8,44 @@ datasource db {
 }
 
 model User {
-  id       String  @id @default(cuid())
-  name     String?
-  email    String  @unique
-  password String
-  role     String
+  id        String  @id @default(cuid())
+  firstname String
+  lastname  String?
+  email     String  @unique
+  password  String
+  isActive  String
 
-  createdAt DateTime  @default(now())
-  updatedAt DateTime? @updatedAt
+  createdAt          DateTime             @default(now())
+  updatedAt          DateTime?            @updatedAt
+
+  UserRole           UserRole[]
+  UserRolePermission UserRolePermission[]
+}
+
+enum Role {
+  OWNER
+  ADMIN
+  USER
+}
+
+model UserRole {
+  id     String @id @default(cuid())
+  userId String
+  role   Role
+
+  User User @relation(fields: [userId], references: [id])
+}
+
+enum AppName {
+  KANBAN
+  WIKI
+}
+
+model UserRolePermission {
+  id     String @id @default(cuid())
+  userId String
+  role   Role
+  appName AppName
+
+  User User @relation(fields: [userId], references: [id])
 }
