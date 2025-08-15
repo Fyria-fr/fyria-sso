@@ -1,10 +1,10 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { NextFunction, Request, Response } from 'express';
-import { getSessionStorageKey, SESSION_TTL_MS } from './config/storage';
+import { getSessionStorageKey, SESSION_TTL_MS } from '../config/storage';
 import { ConfigService } from '@nestjs/config';
-import { getCookiesOptions } from '../../shared/utils/cookies';
-import { CacheStorage } from '../../shared/ports/cache-storage';
-import { Session } from '../../types/session';
+import { getCookiesOptions } from '../../../shared/utils/cookies';
+import { CacheStorage } from '../../../shared/ports/cache-storage';
+import { Session } from '../../../types/session';
 
 @Injectable()
 export class SessionMiddleware implements NestMiddleware {

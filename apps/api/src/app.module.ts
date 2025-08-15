@@ -1,9 +1,9 @@
 import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { SharedModule } from './shared/shared.module';
-import { SessionMiddleware } from './modules/auth/session.middleware';
+import { SessionMiddleware } from './modules/auth/middlewares/session.middleware';
 import { AuthModule } from './modules/auth/auth.module';
-import { UsersModule } from './modules/users/users.module';
+import { UserModule } from './modules/user/user.module';
 
 @Module({
   imports: [
@@ -12,7 +12,7 @@ import { UsersModule } from './modules/users/users.module';
     }),
     SharedModule,
     AuthModule,
-    UsersModule,
+    UserModule,
   ],
   controllers: [],
   providers: [],

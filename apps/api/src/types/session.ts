@@ -1,9 +1,9 @@
 export interface Session {
   id: string;
   user: {
-    id: string;
     email: string;
-    role: string;
-    name: string;
+    firstname: string;
+    lastname: string;
+    role: string[];
   };
 }

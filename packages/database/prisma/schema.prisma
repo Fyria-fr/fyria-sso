@@ -13,13 +13,12 @@ model User {
   lastname  String?
   email     String  @unique
   password  String
-  isActive  String
+  isActive  Boolean @default(true)
 
-  createdAt          DateTime             @default(now())
-  updatedAt          DateTime?            @updatedAt
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
 
-  UserRole           UserRole[]
-  UserRolePermission UserRolePermission[]
+  UserRole UserAppRole[]
 }
 
 enum Role {
@@ -28,24 +27,20 @@ enum Role {
   USER
 }
 
-model UserRole {
-  id     String @id @default(cuid())
-  userId String
-  role   Role
-
-  User User @relation(fields: [userId], references: [id])
-}
-
 enum AppName {
+  ALL
   KANBAN
   WIKI
 }
 
-model UserRolePermission {
-  id     String @id @default(cuid())
-  userId String
-  role   Role
-  appName AppName
+model UserAppRole {
+  id      String  @id @default(cuid())
+  userId  String
+  role    Role    @default(USER)
+  appName AppName @default(ALL)
 
-  User User @relation(fields: [userId], references: [id])
+  createdAt DateTime  @default(now())
+  updatedAt DateTime? @updatedAt
+
+  User User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
